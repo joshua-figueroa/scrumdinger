@@ -33,6 +33,8 @@
 		BFC21B042A8295C200094943 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC21B032A8295C200094943 /* ErrorView.swift */; };
 		BFC21B062A829E7400094943 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC21B052A829E7400094943 /* MeetingTimerView.swift */; };
 		BFC21B0A2A82A03300094943 /* SpeakerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC21B092A82A03300094943 /* SpeakerArc.swift */; };
+		BFC21B0C2A82C1E100094943 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC21B0B2A82C1E100094943 /* SpeechRecognizer.swift */; };
+		BFC21B0F2A82C6CA00094943 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC21B0E2A82C6CA00094943 /* HistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,9 @@
 		BFC21B032A8295C200094943 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BFC21B052A829E7400094943 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		BFC21B092A82A03300094943 /* SpeakerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerArc.swift; sourceTree = "<group>"; };
+		BFC21B0B2A82C1E100094943 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		BFC21B0D2A82C4C000094943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFC21B0E2A82C6CA00094943 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 		BF3E8FF52A7E964E00AFAB8E /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				BFC21B0D2A82C4C000094943 /* Info.plist */,
 				BFC21AF12A80EF4A00094943 /* Resources */,
 				BFC21AEE2A80EDE000094943 /* Views */,
 				BF3E90042A7E9ADF00AFAB8E /* Models */,
@@ -116,6 +122,7 @@
 		BF3E90042A7E9ADF00AFAB8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BFC21B0B2A82C1E100094943 /* SpeechRecognizer.swift */,
 				BFC21AF62A80EFCF00094943 /* ScrumTimer.swift */,
 				BFC21AF42A80EF6A00094943 /* AVPlayer+Ding.swift */,
 				BF3E90052A7E9AFA00AFAB8E /* Theme.swift */,
@@ -142,6 +149,7 @@
 				BFC21B052A829E7400094943 /* MeetingTimerView.swift */,
 				BFC21AEA2A80CE2600094943 /* ThemePicker.swift */,
 				BF3E8FF82A7E964E00AFAB8E /* MeetingView.swift */,
+				BFC21B0E2A82C6CA00094943 /* HistoryView.swift */,
 				BFC21B092A82A03300094943 /* SpeakerArc.swift */,
 				BFC21AF82A80FAFE00094943 /* MeetingFooterView.swift */,
 				BFC21AEC2A80EC6800094943 /* MeetingHeaderView.swift */,
@@ -236,6 +244,7 @@
 				BFC21B0A2A82A03300094943 /* SpeakerArc.swift in Sources */,
 				BFC21B042A8295C200094943 /* ErrorView.swift in Sources */,
 				BFC21AE52A7EBC5D00094943 /* DetailView.swift in Sources */,
+				BFC21B0F2A82C6CA00094943 /* HistoryView.swift in Sources */,
 				BFC21B062A829E7400094943 /* MeetingTimerView.swift in Sources */,
 				BFC21AED2A80EC6800094943 /* MeetingHeaderView.swift in Sources */,
 				BFC21B002A812F2B00094943 /* ScrumStore.swift in Sources */,
@@ -246,6 +255,7 @@
 				BFC21AFB2A80FED600094943 /* NewScrumSheet.swift in Sources */,
 				BF3E90062A7E9AFA00AFAB8E /* Theme.swift in Sources */,
 				BFC21AE32A7EB7D800094943 /* ScrumsView.swift in Sources */,
+				BFC21B0C2A82C1E100094943 /* SpeechRecognizer.swift in Sources */,
 				BFC21AF72A80EFCF00094943 /* ScrumTimer.swift in Sources */,
 				BFC21AF52A80EF6A00094943 /* AVPlayer+Ding.swift in Sources */,
 				BF3E8FF92A7E964E00AFAB8E /* MeetingView.swift in Sources */,
@@ -383,9 +393,15 @@
 				DEVELOPMENT_TEAM = 4QN838772C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scrumdinger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scrumdinger;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -412,9 +428,15 @@
 				DEVELOPMENT_TEAM = 4QN838772C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scrumdinger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scrumdinger;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
