@@ -27,7 +27,7 @@ struct MeetingHeaderView: View {
     
     var body: some View {
         VStack {
-            ProgressView(value: 5, total: 15)
+            ProgressView(value: progress)
                 .progressViewStyle(ScrumProgressViewStyle(theme: theme))
             HStack {
                 VStack(alignment: .leading) {
@@ -53,7 +53,7 @@ struct MeetingHeaderView: View {
 
 struct MeetingHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingHeaderView(secondsElapsed: 60, secondsRemaining: 180, theme: .bubblegum)
+        MeetingHeaderView(secondsElapsed: 1, secondsRemaining: 180, theme: .bubblegum)
             .previewLayout(.sizeThatFits)
     }
 }
